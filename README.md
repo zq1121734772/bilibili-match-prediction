@@ -14,6 +14,15 @@ bilibili-match-prediction
 
 **请不要滥用相关API，让我们一起爱护B站 ❤**
 
+<div align="center">
+
+[也可点击此处一键加群](https://qm.qq.com/cgi-bin/qm/qr?k=m_M1Fydi3MvrVAEM0Sp6hDfZF4N2SpXU&jump_from=webapi)
+
+
+![qq群二维码](docs/IMG/qqgroup.png)
+
+</div>
+
 ## 功能列表
 
 * [x] 每天上午 9 点 10 分自动开始任务。*【运行时间可自定义】*
