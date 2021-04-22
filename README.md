@@ -87,6 +87,7 @@ bilibili-match-prediction
 + "skipDailyTask": false
 }
 ```
+**首次执行请前往 [赛事预测界面](https://www.bilibili.com/v/game/match/competition) 手动预测一场比赛**
 
 如果需要修改每日任务执行的时间，请修改 `.github/workflows/auto_task_bilili.yml`，在第 12 行左右位置找到下如下配置。
 
