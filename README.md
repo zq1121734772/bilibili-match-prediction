@@ -14,13 +14,23 @@ bilibili-match-prediction
 
 **请不要滥用相关API，让我们一起爱护B站 ❤**
 
+<div align="center">
+
+[也可点击此处一键加群](https://qm.qq.com/cgi-bin/qm/qr?k=m_M1Fydi3MvrVAEM0Sp6hDfZF4N2SpXU&jump_from=webapi)
+
+**qq群二维码**
+
+![qq群二维码](docs/IMG/qqgroup.png)
+
+</div>
+
 ## 功能列表
 
 * [x] 每天上午 9 点 10 分自动开始任务。*【运行时间可自定义】*
 * [x] 支持推送执行结果到微信，钉钉，飞书等
 * [x] 每日自动参与当天的赛事预测，默认每次预测5硬币。
 * [x] 原型机按照赔率预测，简单说就跟着人多的压。
-[点击快速开始使用](#使用说明)
+  [点击快速开始使用](#使用说明)
 
 [点击快速查看自定义功能配置](#自定义功能配置)
 
@@ -33,7 +43,8 @@ bilibili-match-prediction
     - [订阅执行结果](#订阅执行结果)
         - [Server酱Turbo版](#server酱turbo版)
         - [Telegram订阅执行结果](#telegram订阅执行结果)
-    
+        - [PushPlus(Push+)](#pushpluspush)
+
     - [免责声明](#免责声明)
     - [致谢](#致谢)
     - [License](#license)
@@ -68,15 +79,15 @@ bilibili-match-prediction
 
 ![图示](docs/IMG/workflow_dispatch.png)
 
-**Fork 仓库后，GitHub 默认不自动执行 Actions 任务，请修改 `.github/trigger.json` 文件,将 `trigger` 的值改为 `1`，这样每天就会自动执行定时任务了。**
+**Fork 仓库后，默认不自动执行 Actions 任务，请修改 `src/resources/config.json` 文件,将 `skipDailyTask` 的值改为 `false`，这样每天就会自动执行定时任务了。**
 
 ```patch
 {
-- "trigger": 0
-+ "trigger": 1
+- "skipDailyTask": true
++ "skipDailyTask": false
 }
 ```
-
+**首次执行请前往 [赛事预测界面](https://www.bilibili.com/v/game/match/competition) 手动预测一场比赛**
 
 如果需要修改每日任务执行的时间，请修改 `.github/workflows/auto_task_bilili.yml`，在第 12 行左右位置找到下如下配置。
 
@@ -97,9 +108,10 @@ bilibili-match-prediction
 
 **查看 Actions 运行日志**
 
-
 ### 三、使用 Linux Crontab 方式
+
 1. 在linux shell环境执行以下命令，并按照提示输入SESSDATA，DEDEUSERID，BILI\_JCT，SCKEY四个参数
+
 ## 订阅执行结果
 
 ### Server酱Turbo版
@@ -115,13 +127,22 @@ bilibili-match-prediction
 - 自定义微信测试号
 - 方糖服务号
 
-1. 前往 [sct.ftqq.com](https://sct.ftqq.com/sendkey)点击登入，创建账号。
-2. 点击点[SendKey](https://sct.ftqq.com/sendkey) ，生成一个 Key。将其增加到 Github Secrets 中，变量名为 `SERVERPUSHKEY`
+1. 前往 [sct.ftqq.com](https://sct.ftqq.com/sendkey) 点击登入，创建账号。
+2. 点击点[SendKey](https://sct.ftqq.com/sendkey) ，生成一个 Key。将其增加到 Github Secrets 中，变量名为 `SCKEY`
 3. [配置消息通道](https://sct.ftqq.com/forward) ，选择方糖服务号，保存即可。
 4. 推送效果展示
    ![图示](docs/IMG/img.png)
 
-**旧版推送渠道[sc.ftqq.com](http://sc.ftqq.com/9.version]即将与4月底下线，请前往[sct.ftqq.com](https://sct.ftqq.com/sendkey)生成`Turbo`版本的`Key`，注意，申请Turbo版Key后请配置消息通道，如果想沿用以前的推送方式，选择方糖服务号即可**
+**旧版推送渠道 [sc.ftqq.com](http://sc.ftqq.com/9.version) 即将与4月底下线，请前往 [sct.ftqq.com](https://sct.ftqq.com/sendkey) 生成`Turbo`版本的`Key`，注意，申请Turbo版Key后请配置消息通道，如果想沿用以前的推送方式，选择方糖服务号即可**
+
+### PushPlus(Push+)
+
+1.[前往PushPlus获取Token](https://www.pushplus.plus/push1.html)
+
+2.在Github Secrets中的SCKEY参数更新成获取到的Token
+
+3.完成
+
 
 ### Telegram订阅执行结果
 
@@ -142,11 +163,12 @@ bilibili-match-prediction
 3. 本工具执行过程中产生的日志，仅会在使用者自行配置推送渠道后进行推送。日志中不包含任何用户敏感信息。
 4. 如果有人修改了本项目（或者直接使用本项目）盈利恰饭，那和我肯定没关系，我开源的目的单纯是技术分享。
 5. 如果你使用了第三方修改的，打包的本工具代码，那你可得注意了，指不定人就把你的数据上传到他自己的服务器了，这可和我没关系。（**网络安全教育普及任重而道远**）
-6. 本工具源码仅在[JunzhouLiu/BILIBILI-HELPER](https://github.com/JunzhouLiu/BILIBILI-HELPER)开源，其余的地方的代码均不是我提交的，可能是抄我的，借鉴我的，但绝对不是我发布的，出问题和我也没关系。
+6.
+本工具源码仅在[JunzhouLiu/bilibili-match-prediction](https://github.com/JunzhouLiu/bilibili-match-prediction) 开源，其余的地方的代码均不是我提交的，可能是抄我的，借鉴我的，但绝对不是我发布的，出问题和我也没关系。
 7. 我开源本工具的代码仅仅是技术分享，没有任何丝毫的盈利赚钱目的，如果你非要给我打赏/充电，那我就是网络乞丐，咱们不构成任何雇佣，购买关系的交易。
 8. 本项目不会增加类似于自动转发抽奖，秒杀，下载版权受限视频等侵犯UP主/B站权益的功能，开发这个应用的目的是单纯的技术分享。下游分支开发者/使用者也请不要滥用相关功能。
 9. 本项目欢迎其他开发者参与贡献，基于本工具的二次开发，使用其他语言重写都没有什么问题，能在技术上给你带来帮助和收获就很好.
-10. 本项目遵守[MIT License](https://github.com/JunzhouLiu/BILIBILI-HELPER/blob/main/LICENSE)，请各位知悉。
+10. 本项目遵守[MIT License](https://github.com/JunzhouLiu/bilibili-match-prediction/blob/main/LICENSE)，请各位知悉。
 
 ## 致谢
 

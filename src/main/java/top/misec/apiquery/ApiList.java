@@ -5,14 +5,10 @@ package top.misec.apiquery;
  * @create 2020/10/11 3:40
  */
 public class ApiList {
-
+    public static String PushPlus = "http://www.pushplus.plus/send";
     public static String ServerPushV2 = "https://sctapi.ftqq.com/";
     public static String ServerPushTelegram = "https://api.telegram.org/bot";
     public static String LOGIN = "https://api.bilibili.com/x/web-interface/nav";
-
-    public static String reward = "https://api.bilibili.com/x/member/web/exp/reward";
-
-    public static String needCoinNew = "https://api.bilibili.com/x/web-interface/coin/today/exp";
 
     /**
      * 查询主站硬币余额
@@ -31,8 +27,8 @@ public class ApiList {
 
     public static String videoView = "https://api.bilibili.com/x/web-interface/view";
 
-    public static String queryQuestions ="https://api.bilibili.com/x/esports/guess/collection/question";
+    public static String queryQuestions = "https://api.bilibili.com/x/esports/guess/collection/question";
 
-    public static String queryMatchInfo="https://api.bilibili.com/x/esports/guess/collection/statis";
-    public static String doAdd="https://api.bilibili.com/x/esports/guess/add";
+    public static String queryMatchInfo = "https://api.bilibili.com/x/esports/guess/collection/statis";
+    public static String doAdd = "https://api.bilibili.com/x/esports/guess/add";
 }
